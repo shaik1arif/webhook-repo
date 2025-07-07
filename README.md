@@ -1,61 +1,46 @@
-# Webhook Receiver – TechStaX Developer Assessment
+# GitHub Webhook Receiver – TechStaX Assessment
 
-This project is a Flask-based GitHub webhook receiver that listens for **push**, **pull request**, and **merge** events and stores them in **MongoDB Atlas**. The stored events are displayed in a live-updating UI.
+This Flask-based app receives GitHub webhook events (push, pull request, and merge) and stores them in MongoDB Atlas. A frontend UI displays recent events with automatic refresh.
 
-## Repositories
-
-- Trigger repo: [action-repo](https://github.com/shaik1arif/action-repo)
-- Webhook repo: This repository (`webhook-repo`)
+## Live GitHub Trigger Repo
+[`action-repo`](https://github.com/shaik1arif/action-repo) — used to trigger GitHub webhook events.
 
 ## Features
-
-- Receive and store GitHub webhook events
-- Supports:
-  - Push events
-  - Pull request opened/closed
-  - Merged pull requests (bonus)
-- Stores data in MongoDB Atlas
-- Auto-refreshing UI (every 15 seconds) using HTML + JavaScript
-- Flask backend with two endpoints:
-  - `/webhook` (for GitHub POSTs)
-  - `/view` (frontend UI)
+- Push event tracking
+- Pull request event tracking
+- Merge detection
+- MongoDB Atlas integration
+- Auto-refreshing UI (every 15 seconds)
+- Flask backend with API support
 
 ## Tech Stack
-
-- Python 3
-- Flask
+- Python + Flask
 - MongoDB Atlas
-- HTML, JavaScript
 - GitHub Webhooks
+- HTML, JavaScript
 
 ## How to Run Locally
 
-1. Clone this repository
-git clone https://github.com/shaik1arif/webhook-repo
-cd webhook-repo
+1. Clone this repo  
+   `git clone https://github.com/shaik1arif/webhook-repo`
 
-2. Create virtual environment
-python -m venv venv
-venv\Scripts\activate     # On Windows
+2. Set up virtual environment  
+   `python -m venv venv && venv\Scripts\activate`
 
-3. Install dependencies
-pip install -r requirements.txt
+3. Install dependencies  
+   `pip install -r requirements.txt`
 
-4. Run the Flask server
-py app.py
+4. Run Flask app  
+   `py app.py`
 
-Now open http://127.0.0.1:5000/view to view events.
+5. Open browser  
+   [http://localhost:5000/view](http://localhost:5000/view)
 
-## How to Trigger Events
+## To Test Webhook Events
 
-Use action-repo to:
--Push a commit to any branch
--Open a pull request
--Merge a pull request
-Each of these will trigger a webhook → Flask receives it → stores in MongoDB → shows in UI.
+Use the [`action-repo`](https://github.com/shaik1arif/action-repo) to:
+- Push commits
+- Open pull requests
+- Merge PRs
 
-## Example UI Output
-
-shaik1arif push to main on 07 July 2025 - 11:05 AM UTC
-shaik1arif pull_request_opened from feature to main on 07 July 2025 - 11:15 AM UTC
-shaik1arif merged from feature to main on 07 July 2025 - 11:20 AM UTC
+Then check `/view` for live updates!
