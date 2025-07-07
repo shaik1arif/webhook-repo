@@ -30,18 +30,18 @@ This project is a Flask-based GitHub webhook receiver that listens for **push**,
 
 ## How to Run Locally
 
-# 1. Clone this repository
+1. Clone this repository
 git clone https://github.com/shaik1arif/webhook-repo
 cd webhook-repo
 
-# 2. Create virtual environment
+2. Create virtual environment
 python -m venv venv
 venv\Scripts\activate     # On Windows
 
-# 3. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Run the Flask server
+4. Run the Flask server
 py app.py
 
 Now open http://127.0.0.1:5000/view to view events.
@@ -59,7 +59,3 @@ Each of these will trigger a webhook → Flask receives it → stores in MongoDB
 shaik1arif push to main on 07 July 2025 - 11:05 AM UTC
 shaik1arif pull_request_opened from feature to main on 07 July 2025 - 11:15 AM UTC
 shaik1arif merged from feature to main on 07 July 2025 - 11:20 AM UTC
-## Author
-
-Arif Shaik
-Submission for TechStaX Developer Assessment 2025
