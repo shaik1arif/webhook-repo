@@ -36,6 +36,8 @@ This Flask-based app receives GitHub webhook events (push, pull request, and mer
 5. Open browser  
    [http://localhost:5000/view](http://localhost:5000/view)
 
+Make sure MongoDB Atlas is properly connected in `app.py`, and the webhook is configured in your `action-repo` settings.
+
 ## To Test Webhook Events
 
 Use the [`action-repo`](https://github.com/shaik1arif/action-repo) to:
